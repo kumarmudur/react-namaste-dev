@@ -26,6 +26,24 @@ const parent = React.createElement(
     )
 );
 
+// React Element
+const jsxHeading = <h1>Namaste React using JSX</h1>;
+
+// React functional component
+const Heading = () => {
+    return (
+      <div className="container">
+        <h1>Namaste React functional component!</h1>
+      </div>
+    );
+}
+
+const Heading2 = () => {
+    return <h1>Namaste React functional component!</h1>;
+}
+
+const Heading3 = () => <h1 className="heading">Namaste React functional component!</h1>;
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-root.render(parent); 
+root.render(Heading);
