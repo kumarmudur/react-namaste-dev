@@ -1,49 +1,70 @@
-// const heading = React.createElement('h1', {id: 'heading'}, 'Hello World from React');
-
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-
-// root.render(heading); 
-
-{/* <div id="parent">
-    <div id="child">
-        <h1>I'm h1 tag!</h1>
-    </div>
-</div> */}
-
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-const parent = React.createElement(
-    "div",
-    { id: 'parent'},
-    React.createElement(
-        "div",
-        { id: 'child' },
-        [
-            React.createElement("h1", {}, "I'm h1 tag!"),
-            React.createElement("h1", {}, "I'm h2 tag!")
-        ]
-    )
-);
-
-// React Element
-const jsxHeading = <h1>Namaste React using JSX</h1>;
-
-// React functional component
-const Heading = () => {
+const Header = () => {
     return (
-      <div className="container">
-        <h1>Namaste React functional component!</h1>
+        <div className="header">
+            <div className="logo-container">
+                <img
+                    className="logo"
+                    src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png"
+                    alt="food logo image"
+                />
+            </div>
+            <div className="nav-items">
+                <ul>
+                    <li>Home</li>
+                    <li>About Us</li>
+                    <li>Contact Us</li>
+                    <li>Cart</li>
+                </ul>
+            </div>
+        </div>
+    )
+}
+
+const RestaurantCard = () => {
+  return (
+      <div className="res-card" style={{ backgroundColor: "#f0f0f0"}}>
+        <img
+            className="res-logo"
+            alt="res-logo"
+            src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/g2foy7fpthv6iallfnz7"
+        />
+        <h3>Meghana Foods</h3>
+        <h4>Biriyani, North Indian, Asian</h4>
+        <h4>4.4 stars</h4>
+        <h4>38 minutes</h4>
       </div>
-    );
-}
+  )
+};
 
-const Heading2 = () => {
-    return <h1>Namaste React functional component!</h1>;
-}
+const Body = () => {
+    return (
+        <div className="body">
+            <div className="search">Search</div>
+            <div className="res-container">
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+                <RestaurantCard />
+            </div>
+        </div>
+    )
+};
+const AppLayout = () => {
+    return (
+        <div className="app">
+            <Header />
+            <Body />
+        </div>
+    )
+};
 
-const Heading3 = () => <h1 className="heading">Namaste React functional component!</h1>;
+const root = ReactDOM.createRoot(document.getElementById(('root')));
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-
-root.render(Heading);
+root.render(<AppLayout />);
