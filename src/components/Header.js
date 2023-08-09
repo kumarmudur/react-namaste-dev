@@ -1,7 +1,13 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 import { LOGO_URL } from '../utils/constants';
 const Header = () => {
+
+    // if no dependency array => useEffect called on every render
+    // if dependency array is empty = [] => useEffect is called on initial render (just once)
+    useEffect(() => {
+        console.log('useEffect called');
+    }, []);
     return (
         <div className="header">
             <div className="logo-container">
