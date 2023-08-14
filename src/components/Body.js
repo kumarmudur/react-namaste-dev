@@ -12,7 +12,7 @@ const Body = () => {
 
     useEffect(() => {
         console.log('useEffect called');
-        fetchData();
+        // fetchData();
     }, []);
 
     const fetchData = async () => {
